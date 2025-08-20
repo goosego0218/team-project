@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# 자기소개서 분석 애플리케이션
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+자기소개서를 입력하거나 파일로 업로드하여 AI 기반 분석을 받을 수 있는 웹 애플리케이션입니다.
 
-## Available Scripts
+## 🚀 주요 기능
 
-In the project directory, you can run:
+- **텍스트 입력**: 직접 자기소개서 내용을 입력
+- **파일 업로드**: .txt, .doc, .docx, .pdf 파일 지원
+- **자동 요약**: 자기소개서 내용을 간결하게 요약
+- **면접 질문 생성**: 자기소개서 기반 예상 면접 질문 제공
+- **개선 제안**: 자기소개서 개선을 위한 구체적인 제안사항
 
-### `npm start`
+## 🛠️ 기술 스택
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React 19
+- **Styling**: CSS3 (Custom CSS)
+- **Icons**: Emoji 기반 아이콘
+- **File Handling**: HTML5 File API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 프로젝트 구조
 
-### `npm test`
+```
+src/
+├── components/
+│   ├── Sidebar.js          # 좌측 네비게이션 사이드바
+│   ├── Sidebar.css
+│   ├── Header.js           # 상단 헤더
+│   ├── Header.css
+│   ├── MainContent.js      # 메인 콘텐츠 영역
+│   └── MainContent.css
+├── App.js                  # 메인 앱 컴포넌트
+├── App.css                 # 전역 스타일
+└── index.js                # 앱 진입점
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎨 UI/UX 특징
 
-### `npm run build`
+- **모던한 디자인**: 깔끔하고 직관적인 인터페이스
+- **반응형 레이아웃**: 모바일, 태블릿, 데스크톱 지원
+- **그라데이션 테마**: 보라색 계열의 세련된 색상 구성
+- **애니메이션**: 부드러운 전환 효과와 호버 애니메이션
+- **카드 기반 레이아웃**: 정보를 명확하게 구분하여 표시
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 실행 방법
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. 의존성 설치:
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. 개발 서버 실행:
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+3. 브라우저에서 `http://localhost:3000` 접속
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📱 반응형 지원
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **데스크톱**: 1200px 이상 - 사이드바 + 메인 콘텐츠
+- **태블릿**: 768px - 1199px - 세로 레이아웃
+- **모바일**: 767px 이하 - 모바일 최적화 레이아웃
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔮 향후 계획
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- [ ] 백엔드 API 연동
+- [ ] 실제 AI 분석 기능 구현
+- [ ] 사용자 인증 시스템
+- [ ] 분석 결과 저장 및 히스토리
+- [ ] 다국어 지원
+- [ ] 다크 모드 테마
 
-## Learn More
+## 📝 사용법
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **텍스트 입력 모드**:
+   - "텍스트 입력" 탭 선택
+   - 자기소개서 내용을 텍스트 영역에 입력
+   - "분석 시작" 버튼 클릭
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **파일 업로드 모드**:
+   - "파일 업로드" 탭 선택
+   - 파일을 드래그 앤 드롭하거나 클릭하여 선택
+   - 지원 형식: .txt, .doc, .docx, .pdf
 
-### Code Splitting
+3. **분석 결과 확인**:
+   - 요약 결과: 자기소개서 핵심 내용 요약
+   - 예상 면접 질문: 자기소개서 기반 질문 목록
+   - 개선 제안: 자기소개서 개선을 위한 제안사항
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🤝 기여하기
 
-### Analyzing the Bundle Size
+프로젝트에 기여하고 싶으시다면:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. 이 저장소를 포크
+2. 새로운 기능 브랜치 생성
+3. 변경사항 커밋
+4. Pull Request 생성
 
-### Making a Progressive Web App
+## 📄 라이선스
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+이 프로젝트는 MIT 라이선스 하에 배포됩니다.
 
-### Advanced Configuration
+## 📞 문의
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+프로젝트에 대한 문의사항이 있으시면 이슈를 생성해 주세요.

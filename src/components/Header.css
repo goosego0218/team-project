@@ -1,0 +1,249 @@
+.header {
+  background: #1a1a2e;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #2a2a3e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin-left: 280px;
+  transition: margin-left 0.25s ease;
+}
+
+/* Collapsed sidebar offset */
+.sidebar-collapsed .header {
+  margin-left: 0;
+}
+
+.header-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.notification-banner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  padding: 0.75rem 3rem 0.75rem 0.5rem;
+  color: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  max-width: 500px;
+  animation: slideIn 0.5s ease;
+  text-align: left;
+}
+
+.notification-banner .icon {
+  font-size: 1rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggle-sidebar-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #2a2a3e;
+  border: 1px solid #3a3a4e;
+  color: #a0a0a0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.toggle-sidebar-btn:hover {
+  background: #3a3a4e;
+  color: #4a90e2;
+  transform: scale(1.05);
+  border-color: #4a90e2;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #2a2a3e;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #3a3a4e;
+}
+
+.user-profile:hover {
+  background: #3a3a4e;
+  transform: translateY(-2px);
+  border-color: #4a90e2;
+}
+
+.user-profile .icon {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #e8e8e8;
+}
+
+.user-role {
+  font-size: 0.75rem;
+  color: #a0a0a0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #a0a0a0;
+  background: #2a2a3e;
+  border: 1px solid #3a3a4e;
+}
+
+.action-btn:hover {
+  background: #3a3a4e;
+  color: #4a90e2;
+  transform: scale(1.1);
+  border-color: #4a90e2;
+}
+
+.action-btn .icon {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .header {
+    margin-left: 0;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .sidebar-collapsed .header {
+    margin-left: 0;
+  }
+  
+  .header-left {
+    width: 100%;
+  }
+  
+  .notification-banner {
+    max-width: 100%;
+    font-size: 0.8rem;
+  }
+  
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Light theme overrides */
+.theme-light .header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+}
+
+.theme-light .notification-banner {
+  background: #f3f4f6;
+  color: #111827;
+  padding: 0.75rem 1rem;
+}
+
+.theme-light .notification-banner .icon {
+  background: #e5e7eb;
+  color: #6b7280;
+}
+
+.theme-light .toggle-sidebar-btn {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.theme-light .toggle-sidebar-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.theme-light .user-profile {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.theme-light .user-profile:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.theme-light .user-profile .icon {
+  color: #6b7280;
+}
+
+.theme-light .user-name {
+  color: #111827;
+}
+
+.theme-light .user-role {
+  color: #6b7280;
+}
+
+.theme-light .action-btn {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.theme-light .action-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+  border-color: #d1d5db;
+}
