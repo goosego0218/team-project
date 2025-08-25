@@ -510,3 +510,14 @@
 .theme-light .loading-overlay p {
   color: #111827;
 }
+
+
+.results-section {
+  margin-top: 2rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
