@@ -129,7 +129,7 @@ def generate_questions(model, tokenizer, position, resume, n=5):
                 max_new_tokens=50,
                 num_return_sequences=max(1, min(n, 10)),
                 no_repeat_ngram_size=3,
-                eos_token_id=END_ID,                    # ✅ [END_Q]에서 종료
+                eos_token_id=END_ID,                    # [END_Q]에서 종료
                 pad_token_id=tokenizer.eos_token_id,
             )
 
