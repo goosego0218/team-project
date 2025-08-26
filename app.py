@@ -265,7 +265,7 @@ def summarize_resume(model, tokenizer, resume, position="미지정"):
         sents = re.split(r'(?<=[.!?]|[가-힣]\))\s+', resume.strip())
         return ' '.join(sents[:3])[:600] if sents else resume[:300]
     SUM_PROMPT = (
-        "[TASK] 아래 자기소개서를 2~4문장으로 간결 요약하세요. "
+        "[TASK] 아래 자기소개서를 250글자로 요약하세요. "
         "기술스택·역할·수치 성과 중심으로.\n"
         f"[POSITION] {position}\n"
         f"[자기소개서]\n{resume}\n\n[요약]\n"
