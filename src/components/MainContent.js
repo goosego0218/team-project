@@ -56,6 +56,25 @@ function validateCoverLetter(text) {
   return { ok: true };
 }
 
+/* ===== 클라이언트 가드: 요약에 질문성 문장이 섞이면 제거 ===== */
+const KR_QUESTION_CUES = ["무엇", "왜", "어째서", "어떻게", "언제", "어디", "어느", "어떤", "가능", "말씀해", "설명해", "얘기해", "듣고 싶", "알고 싶", "궁금"];
+
+function sanitizeSummary(summary) {
+  if (!summary) return summary;
+  const sents = summary
+    .split(/(?<=[\.\?\!…]|[가-힣]\))\s+/)
+    .map(s => s.trim())
+    .filter(Boolean);
+
+  const nonQ = sents.filter(s => {
+    if (s.endsWith("?")) return false;
+    return !KR_QUESTION_CUES.some(cue => s.includes(cue));
+  });
+
+  const picked = nonQ.length ? nonQ.slice(0, 4) : sents.slice(0, 4).map(s => s.replace(/[?]+$/g, ''));
+  return picked.join(' ').trim();
+}
+
 const MainContent = ({ currentView = 'analyze', onAnalysis, analysisData, isLoading }) => {
   const [inputText, setInputText] = useState('');
   const [position, setPosition] = useState('');
@@ -188,7 +207,9 @@ const MainContent = ({ currentView = 'analyze', onAnalysis, analysisData, isLoad
             {/* 1) 요약 */}
             <div className="result-card summary-card">
               <div className="card-header"><h3>자기소개서 요약</h3></div>
-              <div className="card-content"><p>{analysisData.summary}</p></div>
+              <div className="card-content">
+                <p>{sanitizeSummary(analysisData.summary)}</p>
+              </div>
             </div>
 
             {/* 2) 예상 면접 질문 */}
